@@ -22,7 +22,7 @@ const user = session?.user?.id ? await prisma.user.findUnique({
   }
 }) : null
 
-const linkedProviders = user?.accounts.map(acc => acc.provider) || []
+const linkedProviders = user?.accounts.map((acc: any) => acc.provider) || []
 const hasPassword = user?.password !== null
 
   return (
